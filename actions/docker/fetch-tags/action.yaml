@@ -1,0 +1,16 @@
+name: 'Fetch tags'
+description: 'Create matrix from tags of a Docker repository'
+inputs:
+  ignored-tags: # id of input
+    description: 'Ignored tags'
+    required: false
+    default: ''
+  from: # id of input
+    description: 'Docker repository where the tags will be fetched (ex: library/node)'
+    required: true
+outputs:
+  matrix:
+    description: 'Missing tags to build'
+runs:
+  using: 'node16'
+  main: 'main.js'
